@@ -337,7 +337,8 @@
     transition: all .2s ease
     vertical-align: middle
     width: 20px
-    @extend .icon, .icon-large-check:before
+    @extend .icon
+    content: "\f120"
 
   input[type="checkbox"]:checked + label:after
     transform: scale(1)
@@ -443,6 +444,9 @@ fieldset
   left: 11px
   position: absolute
   top: 13px
+
+.search-input:before
+  content: "\f132"
 
 .clear-input
   color: #ccc
@@ -751,7 +755,8 @@ input.datepicker
       display: block
       font-weight: 400
       padding: 6px 0
-      @extend .icon, .icon-upload-outline:before
+      @extend .icon
+      content: "\f136"
       font-size: 28px
       transition: color .2s ease
       vertical-align: middle
@@ -759,7 +764,8 @@ input.datepicker
     &:after
       animation: "rotate" 2s linear infinite
       color: #bbb
-      @extend .icon, .icon-refresh:before
+      @extend .icon
+      content: "\f131"
       display: none
       font-size: 36px
       height: 50px

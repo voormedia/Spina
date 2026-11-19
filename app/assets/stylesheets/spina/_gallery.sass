@@ -175,7 +175,8 @@
     top: 0
     width: 100%
     z-index: 3
-    @extend .icon, .icon-large-check:before
+    @extend .icon
+    content: "\f120"
 
   .item.attachment
     height: 60px
@@ -227,7 +228,8 @@
       line-height: 130px
       transition: color .2s ease
       vertical-align: middle
-      @extend .icon, .icon-upload-outline
+      @extend .icon
+      content: "\f136"
       font-size: 42px
 
     &:after
@@ -237,7 +239,8 @@
       font-weight: normal
       line-height: 130px
       vertical-align: middle
-      @extend .icon, .icon-refresh:before
+      @extend .icon
+      content: "\f131"
       display: none
       font-size: 42px
 
