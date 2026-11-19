@@ -43,7 +43,7 @@ module Spina
         I18n.locale = params[:locale] || I18n.default_locale
         @page = Page.find(params[:id])
         respond_to do |format|
-          if @page.update_attributes(page_params)
+          if @page.update(page_params)
             add_breadcrumb @page.title
             @page.touch
             I18n.locale = I18n.default_locale
@@ -63,7 +63,7 @@ module Spina
           update_child_pages_position(parent_node)
           update_page_position(parent_node, parent_pos, nil)
         end
-        render nothing: true
+        head :ok
       end
 
       def destroy

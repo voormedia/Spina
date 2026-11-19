@@ -19,12 +19,12 @@ module Spina
       self
     end
 
-    alias_method :old_update_attributes, :update_attributes
-    def update_attributes(attributes)
+    alias_method :old_update, :update
+    def update(attributes)
       if attributes["_destroy"] == "1" && attributes["file"].blank?
         self.page_part.destroy
       else
-        old_update_attributes(attributes)
+        old_update(attributes)
       end
     end
 

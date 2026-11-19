@@ -19,7 +19,7 @@ module Spina
 
       def update
         @navigation = Navigation.find(params[:id])
-        if @navigation.update_attributes(navigation_params)
+        if @navigation.update(navigation_params)
           redirect_to spina.admin_navigation_path(@navigation)
         else
           render :edit
@@ -31,7 +31,7 @@ module Spina
           update_child_pages_position(parent_node)
           update_navigation_item_position(parent_node[:id], parent_pos, nil)
         end
-        render nothing: true
+        head :ok
       end
 
       private

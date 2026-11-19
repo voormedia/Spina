@@ -32,7 +32,7 @@ module Spina
       def update
         @user = User.find(params[:id])
         add_breadcrumb "#{@user}"
-        if @user.update_attributes(user_params)
+        if @user.update(user_params)
           redirect_to spina.admin_users_url
         else
           flash.now[:alert] = I18n.t('spina.users.cannot_be_created')

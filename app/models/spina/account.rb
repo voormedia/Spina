@@ -57,7 +57,7 @@ module Spina
 
     def bootstrap_navigations(theme)
       theme.navigations.each_with_index do |navigation, index|
-        Navigation.where(name: navigation[:name]).first_or_create.update_attributes(navigation.merge(position: index))
+        Navigation.where(name: navigation[:name]).first_or_create.update(navigation.merge(position: index))
       end
     end
 
@@ -65,7 +65,7 @@ module Spina
       theme.custom_pages.each do |page|
         Page.where(name: page[:name])
             .first_or_create(title: page[:title])
-            .update_attributes(view_template: page[:view_template], deletable: page[:deletable])
+            .update(view_template: page[:view_template], deletable: page[:deletable])
       end
     end
 
