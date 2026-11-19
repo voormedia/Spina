@@ -47,7 +47,7 @@ Spina::Engine.routes.draw do
 
     resources :structure_parts do
       collection do
-        get 'destroy/:id' => 'structure_parts#destroy', as: :destroy
+        delete 'destroy/:id' => 'structure_parts#destroy', as: :destroy
       end
     end
 
