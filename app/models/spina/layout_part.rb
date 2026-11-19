@@ -10,7 +10,9 @@ module Spina
 
     validates_uniqueness_of :name, scope: :account_id
 
-    alias_attribute :partable, :layout_partable
+    alias_method :partable, :layout_partable
+
+    alias_method :partable=, :layout_partable=
     alias_attribute :partable_type, :layout_partable_type
     alias_method :layout_partable_attributes=, :partable_attributes=
 

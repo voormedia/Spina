@@ -11,7 +11,9 @@ module Spina
     validates_presence_of :position
     accepts_nested_attributes_for :structure_parts, allow_destroy: true
 
-    alias_attribute :parts, :structure_parts
+    alias_method :parts, :structure_parts
+
+    alias_method :parts=, :structure_parts=
 
     def ensure_position
       self.position ||= Time.now.to_i

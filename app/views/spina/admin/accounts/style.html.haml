@@ -20,7 +20,8 @@
         .horizontal-form-label
           = Spina::Account.human_attribute_name(:logo)
         .horizontal-form-content
-          = image_tag current_account.logo
+          - if current_account.logo.present?
+            = image_tag current_account.logo.url
           = f.file_field :logo
 
       = f.fields_for :layout_parts do |ff|

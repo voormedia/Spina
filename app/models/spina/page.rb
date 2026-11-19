@@ -7,7 +7,8 @@ module Spina
 
     # Page contains multiple parts called PageParts
     has_many :page_parts, dependent: :destroy, inverse_of: :page
-    alias_attribute :parts, :page_parts
+    alias_method :parts, :page_parts
+    alias_method :parts=, :page_parts=
     accepts_nested_attributes_for :page_parts, allow_destroy: true
 
     # Orphaned pages are adopted by parent pages if available, otherwise become root

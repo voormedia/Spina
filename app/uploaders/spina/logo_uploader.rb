@@ -5,7 +5,7 @@ module Spina
 
     process resize_to_fit: [300, 300]
 
-    def extension_white_list
+    def extension_allowlist
       %w(jpg jpeg gif png)
     end
 

@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'breadcrumbs_on_rails'
   s.add_dependency 'turbolinks', '~> 5'
   s.add_dependency 'kaminari'
-  s.add_dependency 'globalize', '~> 6.0'
+  s.add_dependency 'globalize', '>= 6.0', '< 8'
   s.add_dependency 'rack-rewrite', '~> 1.5.0'
   s.add_dependency 'jsonb_accessor', '~> 1.3'
 
